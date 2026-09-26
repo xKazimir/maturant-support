@@ -9,6 +9,13 @@
 </head>
 
 <body>
+    <!--
+        Verejná kópia zásad z appky — odkazujú sem App Store, Google Play aj
+        obrazovka predplatného (hostuje ju repozitár xKazimir/maturant-support
+        na GitHub Pages). GENEROVANÉ z constants/privacyPolicy.ts skriptom
+        scripts/generate-privacy-html.js — needituj ručne. Po zmene zásad
+        stránku pregeneruj a nahraj do maturant-support.
+    -->
     <header>
         <div class="container">
             <h1>Zásady ochrany osobných údajov</h1>
@@ -18,41 +25,99 @@
 
     <main class="container privacy-content">
         <section>
-            <h2>Úvod</h2>
-            <p>Tieto zásady ochrany osobných údajov vysvetľujú, ako aplikácia Maturant ("my", "nás", "naše")
-                zhromažďuje, používa a zverejňuje informácie o vás.</p>
+            <p class="updated">Posledná aktualizácia: 26. 9. 2026</p>
+            <p>Tieto zásady opisujú, aké osobné údaje aplikácia Maturant (ďalej len „aplikácia") spracúva, prečo, s kým ich zdieľa a aké práva máš ako dotknutá osoba podľa Nariadenia (EÚ) 2016/679 (GDPR) a zákona č. 18/2018 Z. z. o ochrane osobných údajov.</p>
         </section>
 
         <section>
-            <h2>Zhromažďovanie údajov</h2>
-            <p>Naša aplikácia rešpektuje vaše súkromie. Zhromažďujeme iba nevyhnutné údaje potrebné na fungovanie
-                aplikácie:</p>
+            <h2>1. Prevádzkovateľ</h2>
+            <p>Prevádzkovateľom v zmysle čl. 4 ods. 7 GDPR je TechBeam s. r. o., so sídlom Lermontovova 911/3, 811 05 Bratislava - mestská časť Staré Mesto, IČO 57 893 080, zapísaná v Obchodnom registri Mestského súdu Bratislava III, oddiel Sro, vložka č. 203909/B. Ten istý prevádzkovateľ prevádzkuje aj web maturitavovrecku.sk. Kontakt na uplatnenie tvojich práv alebo otázky: techbeamxx@gmail.com</p>
+        </section>
+
+        <section>
+            <h2>2. Aké údaje spracúvame</h2>
+            <p>Pri používaní aplikácie spracúvame nasledujúce kategórie údajov:</p>
             <ul>
-                <li><strong>Prihlasovacie údaje:</strong> E-mailová adresa (pre vytvorenie účtu).</li>
-                <li><strong>Údaje o pokroku:</strong> Výsledky vašich testov a postup v učení sa ukladajú, aby sme vám
-                    mohli zobrazovať štatistiky.</li>
+                <li>Identifikačné a kontaktné: e-mailová adresa, meno alebo zobrazované meno, fotografia profilu (ak ju poskytneš cez Google/Apple Sign-In), jedinečný identifikátor používateľa (UID).</li>
+                <li>Údaje o predplatnom: stav predplatného, dátum vypršania, história nákupov (cez RevenueCat, pri nákupe cez webovú pokladňu aj cez Stripe). Čísla platobných kariet k nám nikdy neprídu — zadávaš ich priamo Apple, Google alebo Stripe.</li>
+                <li>Údaje o učení: vyriešené testy, odpovede, štatistiky úspešnosti, chyby na opakovanie, postup v predmetoch.</li>
+                <li>Údaje o triedach: členstvo v triedach učiteľa, zobrazované meno v triede (ak dáš súhlas).</li>
+                <li>Technické údaje: identifikátor zariadenia (IDFV/Android ID, pre obmedzenie počtu zariadení), push token (Expo), verzia aplikácie, záznamy o páde aplikácie (cez Firebase Crashlytics; sú priradené k tvojmu UID, aby sme vedeli chybu opraviť).</li>
+                <li>Štatistiky používania aplikácie — LEN AK ICH ZAPNEŠ: ktoré obrazovky a predmety si otvoril a ako dlho na nich si, ktoré testy si spustil, dokončil alebo prerušil, tvoje skóre a čas v teste, ktoré funkcie používaš (AI vysvetlenia, poznámky, kartičky, slabé miesta, triedy, zamknuté prémiové funkcie), prihlásenie a registrácia (spôsob a kódy chýb), zobrazenie predplatného, jeho nákup a obnovenie, úroveň tvojho predplatného, zablokovanie pre limit zariadení a zobrazenia miest v appke, kde by mohla byť propagácia partnerov. K tomu základné technické údaje o zariadení: výrobca a model, operačný systém a jeho verzia, verzia aplikácie a veľkosť obrazovky. Tieto údaje sú viazané na tvoje UID — nikdy neposielame znenie otázok, tvoje odpovede, poznámky ani tvoj e-mail či meno. Zapínaš ich prepínačom pri prvom spustení (predvolene je vypnutý) a zmeniť to môžeš kedykoľvek v Profil → Štatistiky používania.</li>
+                <li>Súhrnné štatistiky zo servera: z údajov, ktoré aplikácia a web aj tak potrebujú na fungovanie (prihlásenie, dokončené testy, AI vysvetlenia, analýza slabých miest), počítame na našom serveri denné súčty — napríklad koľko ľudí v daný deň Maturant použilo, koľko sa zaregistrovalo a koľko testov sa dokončilo. Do tvojho zariadenia pri tom nič neukladáme ani z neho nečítame a výsledkom sú len celkové počty, bez mien a identifikátorov.</li>
+                <li>IP adresa: spracúvaná pri komunikácii so servermi (Firebase, PostHog a server nášho webu u Vercelu, ktorý aplikácia volá pri nákupe cez webovú pokladňu a pri vymazaní účtu; pri platbe v pokladni aj Stripe) na účely zabezpečenia a doručenia požiadavky. PostHog IP adresu neukladá a polohu z nej nezisťujeme — tvoje mesto ani súradnice nepoznáme.</li>
             </ul>
         </section>
 
         <section>
-            <h2>Použitie údajov</h2>
-            <p>Vaše údaje používame výhradne na:</p>
+            <h2>3. Účel a právny základ spracúvania</h2>
+            <p>Údaje spracúvame na týchto právnych základoch (čl. 6 GDPR):</p>
             <ul>
-                <li>Poskytovanie a správu služieb aplikácie.</li>
-                <li>Synchronizáciu vášho pokroku naprieč zariadeniami.</li>
-                <li>Zlepšovanie používateľskej skúsenosti.</li>
+                <li>Plnenie zmluvy (čl. 6 ods. 1 písm. b)) — vytvorenie a správa účtu, poskytovanie obsahu aplikácie, spracovanie predplatného, synchronizácia tvojich dát medzi zariadeniami.</li>
+                <li>Oprávnený záujem (čl. 6 ods. 1 písm. f)) — zabezpečenie aplikácie, ochrana pred zneužitím (limit zariadení, rate-limity), analýza chýb a stability (Crashlytics), súhrnné štatistiky zo servera (koľko ľudí Maturant denne používa a koľko testov sa dokončí) a uchovanie záznamu o odoslaní potvrdenia objednávky (aj s verziou podmienok, s ktorými si súhlasil) a záznamov o odstúpení od zmluvy aj po vymazaní účtu, na dobu uvedenú v časti 5, aby sme vedeli preukázať, že sme zmluvu potvrdili a odstúpenie vybavili, a uplatniť alebo obhájiť nároky zo zmluvy. Proti tomuto spracúvaniu môžeš namietať podľa čl. 21 GDPR na techbeamxx@gmail.com.</li>
+                <li>Súhlas (čl. 6 ods. 1 písm. a) GDPR a § 109 ods. 8 zákona č. 452/2021 Z. z. o elektronických komunikáciách) — štatistiky používania aplikácie (PostHog): aby sme vedeli, čo študentom pomáha a kde sa zasekávajú, a aby sme vedeli partnerom povedať, koľko študentov denne prejde miestom, kde by mohla byť ich propagácia. Partnerom ukazujeme najviac súhrnné čísla, nikdy údaje o konkrétnom človeku. Bez súhlasu sa knižnica PostHog ani nespustí a nič sa neodošle. Súhlas je dobrovoľný a aplikácia ti bez neho funguje úplne rovnako. Platí na tomto zariadení, kým sa neodhlásiš — po odhlásení sa štatistiky vypnú a ďalší prihlásený účet si ich musí zapnúť sám. Kedykoľvek ho odvoláš v Profil → Štatistiky používania: zber sa hneď zastaví, ešte neodoslané údaje zahodíme a identifikátory PostHogu z tvojho zariadenia zmažeme (najneskôr pri ďalšom spustení aplikácie). Zbierajú sa, len keď si prihlásený. Štatistiky odoslané pred odvolaním ostanú v PostHogu: udalosti PostHog maže po roku a profil priradený k tvojmu účtu zmažeme spolu s účtom, alebo skôr, ak nám napíšeš.</li>
+                <li>Súhlas (čl. 6 ods. 1 písm. a)) — pridanie do triedy učiteľa (ak ho udelíš), zobrazenie tvojho mena v triede, zasielanie push upozornení (možno odvolať v nastaveniach systému).</li>
+                <li>Zákonná povinnosť (čl. 6 ods. 1 písm. c)) — uchovávanie údajov o platbách na účely účtovníctva a daní a vybavenie odstúpenia od zmluvy pri predplatnom z webovej pokladne: prijatie a potvrdenie odstúpenia, zrušenie predplatného a vrátenie peňazí (§ 20, § 20a a § 22 zákona č. 108/2024 Z. z.).</li>
             </ul>
         </section>
 
         <section>
-            <h2>Zdieľanie údajov</h2>
-            <p>Vaše osobné údaje nepredávame ani neposkytujeme tretím stranám na marketingové účely.</p>
+            <h2>4. Sprostredkovatelia a tretie strany</h2>
+            <p>Niektoré dáta spracúvame prostredníctvom dôveryhodných tretích strán, ktoré sú viazané zmluvou o spracúvaní:</p>
+            <ul>
+                <li>Google Firebase (Google LLC / Google Ireland Ltd.) — autentifikácia, databáza (Firestore), cloud funkcie, hlásenie pádov (Crashlytics), push notifikácie. Údaje sa môžu spracúvať v EÚ a USA na základe Štandardných zmluvných doložiek.</li>
+                <li>PostHog (EU Cloud) — štatistiky používania aplikácie, len ak si ich zapol. Údaje sú uložené na serveroch v Európskej únii (Frankfurt). Posielame tvoje UID, udalosti o používaní, úroveň predplatného a základné technické údaje o zariadení (výrobca a model, systém a jeho verzia, verzia aplikácie, veľkosť obrazovky) — nie obsah tvojich odpovedí, e-mail ani meno. Okrem toho mu posielame súhrnné denné čísla zo servera, ktoré nie sú osobnými údajmi.</li>
+                <li>RevenueCat, Inc. (USA) — správa predplatného a overovanie nákupov v App Store / Google Play. Ak si Premium kúpiš cez webovú pokladňu, pošleme RevenueCatu tvoje UID a identifikátor predplatného v Stripe a RevenueCat si zo Stripe načíta produkt, cenu, dátumy a stav tohto predplatného, aby ti Premium odomkla aj aplikácia.</li>
+                <li>Stripe Payments Europe, Limited (Írsko) — platby za Premium cez webovú pokladňu, aj keď nákup začneš v aplikácii, a vrátenie peňazí pri odstúpení od zmluvy. Keď pokračuješ na platbu, pošleme Stripu tvoj e-mail a UID a založíme ťa u neho ako zákazníka, ešte predtým, než zaplatíš. Údaje karty zadávaš priamo Stripu, k nám neprídu. Pri platbe pre nás Stripe údaje spracúva ako sprostredkovateľ; na predchádzanie podvodom a na plnenie svojich zákonných povinností je samostatný prevádzkovateľ a riadi sa svojimi zásadami (stripe.com/privacy). Údaje môže prenášať do USA.</li>
+                <li>Vercel Inc. (USA) — hosting nášho webu maturitavovrecku.sk a jeho serverovej časti. Aplikácia ju volá pri nákupe cez webovú pokladňu (podmienky nákupu, zľavový kód, príprava a overenie platby), pri správe takého predplatného a pri každom vymazaní účtu, keď ruší webové predplatné a v lehote na odstúpenie od zmluvy vracia zaplatenú sumu; pri účte s nákupom na webe ju pri vymazaní volá aj náš server vo Firebase. Server webu pri tom dostane tvoju IP adresu (pri volaní z nášho servera adresu servera) a prihlasovací token, z ktorého zistí identifikátor tvojho účtu, e-mail a meno, ak ho máš nastavené.</li>
+                <li>Resend (USA) — odoslanie potvrdenia objednávky e-mailom pri nákupe cez webovú pokladňu, aj keď nákup začneš v aplikácii, a potvrdenia odstúpenia od zmluvy, ak odstúpiš cez web alebo vymazaním účtu do 14 dní od nákupu predplatného cez webovú pokladňu.</li>
+                <li>Apple Inc. a Google LLC — platby za predplatné kúpené v App Store / Google Play. Ak nákup cez webovú pokladňu začneš v aplikácii na iPhone, Apple k nemu vytvorí identifikátor nákupu (token), ktorý uložíme k objednávke v Stripe, a Apple podľa jeho pravidiel hlásime sumu a dátum takých nákupov — nie tvoje meno ani e-mail.</li>
+                <li>OpenAI / Anthropic — pri použití AI vysvetlení sa znenie otázky, tvoja odpoveď a tvoja konverzácia odosielajú poskytovateľovi LLM výlučne za účelom vygenerovania odpovede. Tvoj e-mail ani identifikátor sa v týchto požiadavkách neposielajú.</li>
+                <li>Expo (push notifikácie) — uchováva tvoj push token na doručovanie pripomienok.</li>
+            </ul>
+            <p>Vercel a Resend sú americké spoločnosti. Prenos údajov k nim do USA sa opiera o rozhodnutie Európskej komisie o primeranej ochrane v rámci EÚ – USA pre ochranu údajov (čl. 45 GDPR), ak je príjemca v tomto rámci certifikovaný, inak o štandardné zmluvné doložky Európskej komisie (čl. 46 ods. 2 písm. c) GDPR).</p>
+            <p>Údaje nepredávame a nepoužívame ich na marketingové účely tretích strán.</p>
         </section>
 
         <section>
-            <h2>Kontakt</h2>
-            <p>Ak máte otázky týkajúce sa týchto zásad, kontaktujte nás na: <a
-                    href="mailto:maturitavovrecku@gmail.com">maturitavovrecku@gmail.com</a></p>
+            <h2>5. Doba uchovávania</h2>
+            <p>Údaje uchovávame, kým máš účet aktívny. Po jeho vymazaní (v aplikácii: Profil → Vymazať účet) sa tvoje osobné údaje a údaje o učení trvalo odstránia zo serverov Firebase do 30 dní, vrátane prepojení na triedy. Výnimkou sú záznamy k nákupom cez webovú pokladňu opísané nižšie. Udalosti v štatistikách používania PostHog maže po jednom roku. Profil, ku ktorému sú priradené (identifikátor tvojho účtu, úroveň predplatného, platforma a verzia aplikácie), uchovávame, kým máš účet; pri jeho vymazaní zmažeme v PostHogu profil aj všetky udalosti. Skôr ich zmažeme, ak nás o to požiadaš. Anonymizované agregáty (napríklad celoslovenské distribúcie úspešnosti) môžu zostať zachované, keďže neumožňujú identifikáciu jednotlivca. Údaje o platbách môžu byť uchovávané dlhšie, pokiaľ to vyžaduje zákon (typicky 10 rokov pre účtovné doklady). Predplatné kúpené cez webovú pokladňu pri vymazaní účtu najprv okamžite zrušíme. Ďalšia platba už nepríde, ale Premium skončí hneď, nie až na konci zaplateného obdobia. Ak od nákupu predplatného ešte neuplynulo 14 dní, vymazanie účtu berieme ako odstúpenie od zmluvy: automaticky ti vrátime celú sumu, ktorú si za predplatné zaplatil, rovnakým spôsobom, akým si platil, a potvrdenie ti pošleme e-mailom. Po uplynutí tejto lehoty sa za nevyužitú časť zaplateného obdobia peniaze nevracajú. Ak je pri odstúpení zmazaním účtu platba v spore s bankou alebo ju nevieme vrátiť automaticky, účet aj tak zmažeme a peniaze ti vrátime ručne najneskôr do 14 dní od odstúpenia; napíšeme ti to v potvrdení. Keď sa predplatné zrušiť nepodarí alebo vrátenie zlyhá pre technickú chybu, účet nezmažeme a môžeš to skúsiť znova. Záznam o tebe ako zákazníkovi v Stripe potom zmažeme, ak si nikdy nezaplatil. Ak si zaplatil, ostane v Stripe kvôli účtovným dokladom (10 rokov podľa zákona č. 431/2002 Z. z.) a zo záznamu zákazníka vymažeme identifikátor tvojho účtu. Objednávky a predplatné v Stripe si identifikátor tvojho účtu (a pri nákupe začatom v aplikácii na iPhone aj identifikátor nákupu od Apple) ponechajú ako súčasť účtovných dokladov na rovnakú dobu. Po vymazaní účtu ostane u nás aj záznam o odoslaní potvrdenia objednávky (identifikátor účtu, číslo objednávky a predplatného, čas odoslania a verzia podmienok, s ktorými si súhlasil) — počas trvania predplatného a potom ešte 3 roky, kým sa nepremlčia prípadné nároky zo zmluvy (§ 101 Občianskeho zákonníka). Ak od zmluvy odstúpiš cez web, oznámenie o odstúpení (meno, e-mail, číslo objednávky, identifikátor účtu a predplatného) uchovávame 3 roky od jeho vybavenia, aj keď účet medzitým zmažeš. Keď odstúpiš vymazaním účtu, zaznamenáme dátum a čas vymazania, identifikátor účtu, číslo predplatného, e-mail, na ktorý ti pošleme potvrdenie, a vrátenú sumu; aj tento záznam uchovávame 3 roky od jeho vybavenia. Predplatné z App Store alebo Google Play vymazanie účtu nezruší, zrušiť ho musíš v obchode.</p>
+        </section>
+
+        <section>
+            <h2>6. Tvoje práva</h2>
+            <p>Podľa GDPR (čl. 15 – 22) máš právo:</p>
+            <ul>
+                <li>na prístup k tvojim osobným údajom,</li>
+                <li>na opravu nesprávnych údajov,</li>
+                <li>na vymazanie údajov („právo byť zabudnutý") — môžeš ho uplatniť priamo v aplikácii cez Profil → Vymazať účet,</li>
+                <li>na obmedzenie spracúvania,</li>
+                <li>na prenosnosť údajov,</li>
+                <li>namietať proti spracúvaniu na základe oprávneného záujmu,</li>
+                <li>kedykoľvek odvolať udelený súhlas,</li>
+                <li>podať sťažnosť na Úrad na ochranu osobných údajov SR (<a href="https://www.dataprotection.gov.sk">www.dataprotection.gov.sk</a>).</li>
+            </ul>
+            <p>Prosby o uplatnenie práv zasielaj na techbeamxx@gmail.com — odpovieme do 30 dní.</p>
+        </section>
+
+        <section>
+            <h2>7. Zabezpečenie</h2>
+            <p>Komunikácia so serverom prebieha výlučne cez šifrované spojenie (TLS). Prístup k databáze je obmedzený serverovými pravidlami Firebase tak, aby si svoje dáta videl a menil iba ty sám. Citlivé operácie (vymazanie účtu, nákupy) sa overujú na strane servera.</p>
+        </section>
+
+        <section>
+            <h2>8. Deti a mladiství</h2>
+            <p>Aplikácia je určená pre žiakov stredných škôl. Ak máš menej ako 16 rokov, na používanie aplikácie potrebuješ súhlas rodiča alebo zákonného zástupcu (čl. 8 GDPR). To isté platí pre štatistiky používania: zapni ich len so súhlasom rodiča.</p>
+        </section>
+
+        <section>
+            <h2>9. Zmeny týchto zásad</h2>
+            <p>Tieto zásady môžeme priebežne aktualizovať. Pri podstatných zmenách ťa upozorníme v aplikácii pred ďalším použitím. Dátum poslednej aktualizácie nájdeš v hornej časti tejto stránky.</p>
+        </section>
+
+        <section>
+            <h2>10. Kontakt</h2>
+            <p>V prípade akýchkoľvek otázok týkajúcich sa ochrany osobných údajov nás kontaktuj na:<br>techbeamxx@gmail.com</p>
         </section>
 
         <div class="links">
