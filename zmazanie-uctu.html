@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maturant - Zmazanie účtu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!--
+        Verejná stránka na zmazanie účtu, ktorú Google Play vyžaduje v Data safety
+        (pole „Delete account URL“, support.google.com/googleplay/android-developer/answer/13327111):
+        musí uvádzať názov appky z obchodu, cestu k zmazaniu bez opätovnej inštalácie
+        appky a čo sa zmaže a čo ostane. Hostuje ju repozitár xKazimir/maturant-support
+        spolu s index.html a privacy.html. Čo ostane po zmazaní, musí súhlasiť so
+        zásadami (constants/privacyPolicy.ts, časť 5); pri ich zmene uprav aj túto stránku.
+    -->
+    <header>
+        <div class="container">
+            <h1>Zmazanie účtu</h1>
+            <p>Aplikácia Maturant</p>
+        </div>
+    </header>
+
+    <main class="container privacy-content">
+        <section>
+            <p>Táto stránka platí pre účet v aplikácii <strong>Maturant</strong> (Google Play a App Store) a na webe
+                maturitavovrecku.sk. Je to ten istý účet. Prevádzkovateľom je TechBeam s. r. o.</p>
+        </section>
+
+        <section>
+            <h2>Ako účet zmažeš</h2>
+            <p><strong>V aplikácii:</strong> Profil → Vymazať účet.</p>
+            <p><strong>Na webe, bez aplikácie:</strong> prihlás sa na <strong>maturitavovrecku.sk</strong> tým istým
+                spôsobom ako v aplikácii (e-mail a heslo, Google alebo Apple) a v Profile zvoľ Zmazať účet.</p>
+            <p><strong>E-mailom, ak sa nevieš prihlásiť:</strong> napíš na
+                <a href="mailto:techbeamxx@gmail.com?subject=Zmazanie%20%C3%BA%C4%8Dtu%20Maturant">techbeamxx@gmail.com</a>
+                z e-mailovej adresy, s ktorou si sa zaregistroval, s predmetom „Zmazanie účtu Maturant“. Účet zmažeme
+                najneskôr do 30 dní a potvrdíme ti to e-mailom.</p>
+        </section>
+
+        <section>
+            <h2>Predplatné</h2>
+            <p>Predplatné kúpené v Google Play alebo v App Store zmazanie účtu nezruší. Zruš ho v Google Play
+                (Platby a predplatné → Predplatné) alebo v nastaveniach Apple ID (Predplatné).</p>
+            <p>Predplatné kúpené cez webovú pokladňu pri zmazaní účtu hneď zrušíme. Ak od jeho kúpy ešte neuplynulo
+                14 dní, zmazanie účtu je odstúpenie od zmluvy a zaplatenú sumu ti automaticky vrátime.</p>
+        </section>
+
+        <section>
+            <h2>Čo sa zmaže</h2>
+            <ul>
+                <li>účet (e-mail, meno, prihlásenie cez Google alebo Apple),</li>
+                <li>údaje o učení: testy, odpovede, štatistiky, chyby na opakovanie, kartičky, rozhovory v AI
+                    vysvetleniach a nahlásené odpovede AI,</li>
+                <li>členstvo v triedach a výsledky zdieľané s učiteľom; triedy, ktoré učíš, sa zmažú celé,</li>
+                <li>push token a štatistiky používania aplikácie, ak si ich zapol.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Čo ostane</h2>
+            <ul>
+                <li>údaje o platbách, ktoré musíme podľa zákona uchovať ako účtovné doklady (10 rokov),</li>
+                <li>záznamy o potvrdení objednávky a o odstúpení od zmluvy pri nákupe cez webovú pokladňu (3 roky),</li>
+                <li>na iPhone v krajine EÚ, kde ti aplikácia ponúka nákup cez webovú pokladňu, tokeny nákupu
+                    od Apple s identifikátorom tvojho účtu, aj keď si nič nekúpil (3 roky od mesačného
+                    hlásenia, ktorého sa týkajú),</li>
+                <li>prihlasovacie údaje vo Firebase Authentication, ktoré Google po zmazaní účtu odstráni zo živých
+                    aj záložných systémov do 180 dní,</li>
+                <li>šifrované záložné kópie databázy, ktoré vymazané údaje obsahujú ešte najviac 14 týždňov
+                    (98 dní) a potom sa automaticky zmažú; používame ich len na obnovu po havárii a keby sme
+                    databázu zo zálohy niekedy obnovili, účty vymazané medzitým znova vymažeme,</li>
+                <li>záznamy o páde aplikácie (Firebase Crashlytics) s identifikátorom tvojho účtu, ktoré Firebase
+                    automaticky maže po 90 dňoch,</li>
+                <li>anonymné súhrnné štatistiky, z ktorých sa nedá zistiť, kto si.</li>
+            </ul>
+            <p>Podrobnosti sú v <a href="privacy.html">zásadách ochrany osobných údajov</a>, časť 5.</p>
+        </section>
+
+        <div class="links">
+            <a href="index.html">← Späť na podporu</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Maturant. Všetky práva vyhradené.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
